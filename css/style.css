@@ -22,7 +22,6 @@ div.sideR{
 div.center{
 	margin: 0 auto;
 	width: 70%;
-	border: 2px blue solid;
 	clear:both;
 	position:relative;
 	font-size:auto;
@@ -30,4 +29,10 @@ div.center{
 
 div#container{
 	display:inline;
+}
+div#header{
+	border: 2px cyan solid;
+}
+*{
+	background:#DADADA;
 }
