@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.sideL{
+	float:left;
+	width: 10%;
+	border: 2px red solid;
+	height:100%;
+
+	position:relative;
+}
+
+div.sideR{
+	float:right;
+	width: 10%;
+	border: 2px red solid;
+	height:100%;
+
+	position:relative;
+}
+
+div.center{
+	margin: 0 auto;
+	width: 70%;
+	border: 2px blue solid;
+	clear:both;
+	position:relative;
+	font-size:auto;
+}
+
+div#container{
+	display:inline;
+}
