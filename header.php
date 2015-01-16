@@ -9,11 +9,11 @@
 <body>
 	<nav id = "header">
     	<ul>
-        	<li> Home </li>
-        	<li> Set up Matches </li>
-            <li> Create a Tournament </li>
-            <li> Add Player </li>
-            <li> Check ranks </li>
+        	<li><a href = "/"> Home </a></li>
+        	<li><a href = "/"> Set up Matches </a></li>
+            <li><a href = "/"> Create a Tournament </a></li>
+            <li><a href = "/"> Add Player </a></li>
+            <li><a href = "/"> Check ranks </a></li>
             
         </ul>
         
