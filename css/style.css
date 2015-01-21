@@ -2,7 +2,7 @@
 /* CSS Document */
 
 *{
-	overflow:hidden;
+
 }
 div.sideL{
 	float:left;
@@ -50,3 +50,4 @@ td{
 	text-align:center;
 	padding-bottom: 200px;
 }
+

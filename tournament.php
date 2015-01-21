@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
+<link rel = "stylesheet" type= "text/css" href = "css/style.css"/>
+<?php $sports = array(
+	"TT" => "Table Tennis",
+	"VB" => "Volleyball", 
+	"BD" => "Badminton"); ?>
 </head>
 
 <body>
@@ -17,7 +22,7 @@
         
         <div id = "body">
         <p style = 'text-align:center;padding:10px 0;'>Which sport would you like to play</p>
-        <form method = "GET" style= "text-align:center; margin:0 auto" action = "matchhandle.php">
+        <form method = "GET" style= "text-align:center; margin:0 auto" action = "tournamenthandle.php">
     		<select name = 'sport'>
             	<?php
 					foreach ($sports as $y => $x)
