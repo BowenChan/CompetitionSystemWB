@@ -1,15 +1,10 @@
-
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Create A Match</title>
-<link rel = "stylesheet" type= "text/css" href = "css/style.css"/>
+<title>Untitled Document</title>
 </head>
-<?php $sports = array(
-	"TT" => "Table Tennis",
-	"VB" => "Volleyball", 
-	"BD" => "Badminton"); ?>
+
 <body>
 <div id = "container">
 	<!-- Left and right div -->
@@ -30,11 +25,19 @@
                 ?>
           	</select>
             <br><br>
-            <p> How many Courts would you like </p>
-            <br>
-            <select name = 'number'>
+            <p> How many brackets would you like </p>
+            <select name = 'bracket'>
             	<?php
-					for($i = 1; $i <= 10; $i++)
+					for($i = 1; $i <= 4; $i++)
+						print "<option value='" . $i . "' style = 'margin: 0 auto'>" . $i . "</option>";
+				?>
+            </select>
+            <br><br>
+            <p> How many people are in this tournament </p>
+            <br>
+            <select name = 'participant'>
+            	<?php
+					for($i = 1; $i <= 32; $i++)
 						print "<option value='" . $i . "' style = 'margin: 0 auto'>" . $i . "</option>";
 				?>
             </select>

@@ -1,6 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
 
+*{
+	overflow:hidden;
+}
 div.sideL{
 	float:left;
 	width: 10%;
@@ -32,7 +35,18 @@ div#container{
 }
 div#header{
 	border: 2px cyan solid;
+	position:relative;
+
 }
 *{
 	background:#DADADA;
+}
+
+table{
+	width:100%;
+}
+td{
+	margin: 0 auto;
+	text-align:center;
+	padding-bottom: 200px;
 }
