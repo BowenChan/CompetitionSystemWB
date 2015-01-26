@@ -13,7 +13,9 @@
     <div class = "sideR"></div> -->
     <div class = "center">
         <div id = "header">
-        <?php include('header.php'); ?>
+        <?php include('header.php'); 
+			include('include/connect.php');
+			?>
         </div>
         
         <div id = "body"></div>
