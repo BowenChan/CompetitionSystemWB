@@ -14,7 +14,7 @@
     <div class = "center">
         <div id = "header">
         <?php include('header.php'); 
-			include('include/connect.php');
+			require_once('include/connect.php');
 			?>
         </div>
         

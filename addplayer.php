@@ -43,7 +43,7 @@
         </div>
         
         <div id = "body"></div>
-        	<form onChange="month()">
+        	<form onChange="month()" action="playerhandle.php" method = "POST">
             	<p> Name: <input type="text" value = "name"></p>
                 <p> Age: <select name = 'age'>
             	<?php
