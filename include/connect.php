@@ -23,7 +23,7 @@
 	}
 	$link = mysqli_connect($server, $username, $password, $db);
 	
-	$sql2 = "CREATE TABLE ". $usertable ." (
+	$sql2 = "CREATE TABLE IF NOT EXISTS ". $usertable ." (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			name VARCHAR(30) NOT NULL,
 			age INT(50) NOT NULL,
@@ -33,7 +33,7 @@
 			
 			$res1 = mysqli_query($link, $sql2) or die(mysqli_error($link));
 			
-		$sql3 = "CREATE TABLE ". $records ." (
+		$sql3 = "CREATE TABLE IF NOT EXISTS ". $records ." (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			player1 VARCHAR(30) NOT NULL,
 			player2 VARCHAR(30) NOT NULL,
@@ -46,7 +46,6 @@
 			/*Check for Tables */
 			$res2 = mysqli_query($link, $sql3) or die (mysqli_error($link));
 	
-		echo " Res 2 is " . $res1 . " Res 3 is " . $res2 ."";
 	
 	mysqli_close($link);
 		

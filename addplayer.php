@@ -44,7 +44,7 @@
         
         <div id = "body"></div>
         	<form onChange="month()" action="playerhandle.php" method = "POST">
-            	<p> Name: <input type="text" value = "name"></p>
+            	<p> Name: <input type="text" name = 'name' placeholder = "name"></p>
                 <p> Age: <select name = 'age'>
             	<?php
 					for($i = 1; $i <= 70; $i++)
@@ -52,7 +52,7 @@
 				?>
           	  </select></p>
             	<p> Birthday: <select name = 'month' onChange="month()" >
-                <option value = '' style = 'margin:0 auto'> Select a month </option>
+                <option value = "" style = 'margin:0 auto'> Select a month </option>
                 <?php
                 	foreach($month as $mon => $day)
 					{
@@ -61,8 +61,8 @@
 					}
             	?>
             	</select>
-            	<select name 'day'>
-                <option value = '' style = 'margin:0 auto'> Select a day </option>
+            	<select name = 'day'>
+                <option value = "" style = 'margin:0 auto'> Select a day </option>
 				<?php
 					
 						for($k = 1; $k <= 31;$k++)
@@ -72,8 +72,8 @@
 				?>
                 	</select>
                     
-          		<select name 'year'>
-                <option value = '' style = 'margin:0 auto'> Select a year </option>
+          		<select name = 'year'>
+                <option value = "" style = 'margin:0 auto'> Select a year </option>
 				<?php
 					
 						for($k = 1990; $k <= 2014;$k++)
@@ -85,6 +85,23 @@
                     
                <p> <button value = " submit " name = "submit" >  Submit  </button></p> 
             </form>
+
+            <?php
+            	if(empty($_GET['add']))
+            	{
+
+            	}
+            	else
+            	{
+	            	if($_GET['add'] == 'successful')
+	            	{
+	            		echo " Player has been added ";
+	            	}
+	            	else
+	            		echo " Please fully fill the form ";
+            	}
+
+            ?>
             	
         <div id = "footer">
         </div>
