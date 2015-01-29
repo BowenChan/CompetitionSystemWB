@@ -44,7 +44,10 @@
         
         <div id = "body"></div>
         	<form onChange="month()" action="playerhandle.php" method = "POST">
-            	<p> Name: <input type="text" name = 'name' placeholder = "name"></p>
+            	<p> First Name: <input type="text" name = 'first' placeholder = "First name">
+            		Last Name: <input type= "text" name = 'last' placeholder = 'Last name'>
+            	</p>
+
                 <p> Age: <select name = 'age'>
             	<?php
 					for($i = 1; $i <= 70; $i++)

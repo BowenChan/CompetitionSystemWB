@@ -21,17 +21,21 @@
 		
 		
 	}
-	$link = mysqli_connect($server, $username, $password, $db);
-	
+	mysqli_close($link);
+	/*creating the connection */
+	$conn = new mysqli($server, $username, $password, $db);
+
 	$sql2 = "CREATE TABLE IF NOT EXISTS ". $usertable ." (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 			name VARCHAR(30) NOT NULL,
+			first_name VARCHAR(30) NOT NULL,
+			last_name VARCHAR(30) NOT NULL,
 			age INT(50) NOT NULL,
-			birthday VARCHAR(30) NOT NULL,
-			reg_date TIMESTAMP
+			birthday VARCHAR(30) NOT NULL
 			);";
 			
-			$res1 = mysqli_query($link, $sql2) or die(mysqli_error($link));
+			$res1 = mysqli_query($conn, $sql2) or die(mysqli_error($conn));
 			
 		$sql3 = "CREATE TABLE IF NOT EXISTS ". $records ." (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -44,9 +48,9 @@
 			matchscore3 VARCHAR(30)
 			);";
 			/*Check for Tables */
-			$res2 = mysqli_query($link, $sql3) or die (mysqli_error($link));
+			$res2 = mysqli_query($conn, $sql3) or die (mysqli_error($conn));
 	
 	
-	mysqli_close($link);
+
 		
 ?>
