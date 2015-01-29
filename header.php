@@ -14,7 +14,7 @@
         	<li><a href = "matchcreate.php"> Set up Matches </a></li>
             <li><a href = "tournament.php"> Create A Tournament </a></li>
             <li><a href = "addplayer.php"> Add Player </a></li>
-            <li><a href = "#"> Check Ranks </a></li>
+            <li><a href = "ranking.php"> Check Ranks </a></li>
             
         </ul>
         
