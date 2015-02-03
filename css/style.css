@@ -30,6 +30,7 @@ div.center{
 	font-size:auto;
 }
 
+
 div#container{
 	display:inline;
 }
@@ -44,10 +45,15 @@ div#header{
 
 table{
 	width:100%;
+	margin:0 auto;
 }
-td{
+td.check{
 	margin: 0 auto;
 	text-align:center;
 	padding-bottom: 200px;
 }
 
+td{
+	margin: 0 auto;
+	text-align:center;
+}
