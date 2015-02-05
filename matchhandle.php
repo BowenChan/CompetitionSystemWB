@@ -1,14 +1,3 @@
-
-<script type = 'text/javascript'>
- 
-
-	        function disableSelect(button){
-	                document.getElementById('select' + (button * 2 - 1)).disabled = true;
-	                document.getElementById('select' + (button * 2)).disabled = true;
-	                document.getElementById('start' + (button)).disabled = true;
-	        };
- 		
-</script>
 <?php
 	require_once('include/connect.php');
 	$sql = "SELECT * from `". $usertable . "`";
@@ -18,7 +7,56 @@
 	{
 		$users[] = $row['name'];
 	}
-	print_r($users);
+?>
+
+<script type = 'text/javascript'>
+			
+			
+
+	        function nameCheck(firstname, secondname){
+	        	
+	        	if(firstname == secondname){
+	        			return false;
+	        	}
+	        	else{
+	        		return true;	
+	        	}
+	        };
+			
+	        function disableSelect(button, court){
+	        			
+	        		var first = document.getElementById('select' + (button * 2- 1 )).value;
+					var second = document.getElementById('select' + (button * 2)).value;
+					
+		            if(nameCheck(first,second)){
+		                document.getElementById('select' + (button * 2 - 1)).disabled = true;
+		                document.getElementById('select' + (button * 2)).disabled = true;
+		                document.getElementById('start' + (button)).disabled = true;
+	            		var user = <?php echo json_encode($users) ?>;
+		            	for(var i = 1; i <= court*2; i++)
+		            	{
+		            		if(i != (button * 2) && i != (button * 2 - 1)){
+			         	  		var temp = document.getElementById('select' + (i));
+				           		for(var j = temp.length -1; j >= 0; j--)
+				           		{	
+				           			if(temp[j].value == first || temp[j].value == second)
+				           			{
+				           				temp.remove(j);
+				           			}
+				            	}
+		            			
+		            		}
+	            		}
+		            }
+		           	else{
+		           		alert("Please do not select the same person");
+		           	}
+		            	
+	        
+			};
+ 		
+</script>
+<?php
 	function createview($court)
 	{
 		global $users;
@@ -42,7 +80,7 @@
 		foreach($users as $name)	
 			echo "<option value = ".$name . ">" . $name . '</option>';
 		echo "</select>";
-		echo "<p> <button id = 'start". $k++ ."' type = button value = start name = start onClick = \"disableSelect(" . ($k - 1) . ");\" > start match  </button></p> ";
+		echo "<p> <button id = 'start". $k++ ."' type = button value = start name = start onClick = \"disableSelect(" . ($k - 1) . "," . $court . ");\" > start match  </button></p> ";
 		echo "</form>";
 		echo "</td>";
 		if($i%3 == 0)
@@ -54,7 +92,6 @@
 		}
 	}
 ?>
-
 <!doctype html>
 <html>
 <head>
